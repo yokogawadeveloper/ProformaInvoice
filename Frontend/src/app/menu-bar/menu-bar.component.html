@@ -1,0 +1,53 @@
+<div class="container">
+
+    <div class="row icon-item">
+        <div class="col-8 logo-item">
+            <img class="logo-img" src="../../assets/YokogawaLogo.jpg" alt="Yokogawa Logo">
+        </div>
+        <div class="col-4 text-right logo-item">
+            <span class="menu-text">Proforma Invoice Portal</span>
+            <div class="active-users">
+                <span class="active-users-circle">
+                    {{activeUsersCount}}
+                    <span class="status-dot"></span>
+                </span>
+                <span class="hover-text">Active Users</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row menu-bar">
+        <div class="col-md-12">
+            <ul class="menu-item">
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/FileUpload" routerLinkActive="active-list-item">Proforma File Upload</a>
+                </li>
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/ProformaList" routerLinkActive="active-list-item">Proforma List</a>
+                </li>
+                <li>
+                    <a routerLink="/proforma/ProformaReport" routerLinkActive="active-list-item">Proforma Report</a>
+                </li>
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/DivisionMaster" routerLinkActive="active-list-item">Proforma Division</a>
+                </li>
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/CategoryMaster" routerLinkActive="active-list-item">Proforma Category</a>
+                </li>
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/RegionMaster" routerLinkActive="active-list-item">Proforma Region</a>
+                </li>
+                <li *ngIf="suser == 'true'">
+                    <a routerLink="/proforma/ProjectManagerMaster" routerLinkActive="active-list-item">Project
+                        Manager</a>
+                </li>
+                <li *ngIf="isadmin == 'true'">
+                    <a routerLink="/proforma/AccessMaster" routerLinkActive="active-list-item">Proforma Access</a>
+                </li>
+                <li>
+                    <span class="pointer" (click)="logoutuser()">Logout</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

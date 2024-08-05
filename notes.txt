@@ -1,0 +1,9 @@
+Proforma Invoice admin credentials :
+
+username : 35000738
+pass : Yil@12345
+
+Other User pass:
+
+pass : Yokogawa@12345
+

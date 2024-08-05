@@ -1,0 +1,107 @@
+.logo-img {
+    width: 25%;
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar {
+    /* background-color: #f8f9fa; */
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.menu-item {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu-item li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-item a.active-list-item {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.active-users {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    position: relative;
+}
+
+.active-users-circle {
+    border-radius: 50%;
+    background-color: #a16625;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    min-width: 40px;
+    /* Minimum width */
+    height: 40px;
+    /* Minimum height */
+    padding: 5px;
+    /* Padding to ensure content is not cramped */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.hover-text {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.active-users:hover .hover-text {
+    display: inline-block;
+}
+
+.disabled-link {
+    pointer-events: none;
+    color: gray;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.menu-text {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,451 @@
+WARNING  2024-08-01 16:00:01,641  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  6152  Not Found: /users 
+
+WARNING  2024-08-01 16:00:07,479  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  6152  Not Found: /user 
+
+WARNING  2024-08-01 16:00:19,060  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  6152  Method Not Allowed: /user/login/ 
+
+WARNING  2024-08-01 16:00:21,536  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  6152  Unauthorized: /user/login/ 
+
+ERROR  2024-08-01 16:23:14,412  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20212  Internal Server Error: /get_order_ack/print_with_signature/10819/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2266, in print_with_signature
+    with open(img_path, "rb") as img_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\static\\images\\signature.png'
+ERROR  2024-08-01 16:23:34,636  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20212  Internal Server Error: /get_order_ack/print_with_signature/10819/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2266, in print_with_signature
+    with open(img_path, "rb") as img_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\static\\images\\signature.png'
+ERROR  2024-08-01 16:26:38,527  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13020  Internal Server Error: /get_order_ack/print_with_signature/10819/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\wkhtmltopdf\views.py", line 74, in rendered_content
+    self.resolve_template(self.template_name),
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\template\response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: invoice_with_signature.html
+ERROR  2024-08-01 16:27:46,505  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13020  Internal Server Error: /user/login/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework_simplejwt\views.py", line 27, in post
+    serializer.is_valid(raise_exception=True)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 27, in validate
+    user = pwdless.authenticate(self, attrs)
+  File "D:\ProformaInvoice\Backend\users\auth_backend.py", line 20, in authenticate
+    user = User.objects.get(username=username['username'])
+KeyError: 'username'
+ERROR  2024-08-01 16:27:49,489  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13020  Internal Server Error: /user/login/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework_simplejwt\views.py", line 27, in post
+    serializer.is_valid(raise_exception=True)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 27, in validate
+    user = pwdless.authenticate(self, attrs)
+  File "D:\ProformaInvoice\Backend\users\auth_backend.py", line 20, in authenticate
+    user = User.objects.get(username=username['username'])
+KeyError: 'username'
+WARNING  2024-08-02 14:48:05,870  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23500  Unauthorized: /user/active_users/ 
+
+WARNING  2024-08-02 14:48:43,700  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  8136  Method Not Allowed: /user/active_users/ 
+
+ERROR  2024-08-02 14:48:50,234  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  8136  Internal Server Error: /user/active_users/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 167, in get
+    active_user_count = ActiveUserMiddleware.get_active_user_count()
+  File "D:\ProformaInvoice\Backend\users\middlewares.py", line 15, in get_active_user_count
+    active_sessions = Session.objects.filter(expire_date__gte=time.time())
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1406, in get_prep_value
+    value = super().get_prep_value(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1266, in get_prep_value
+    return self.to_python(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1367, in to_python
+    parsed = parse_datetime(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\dateparse.py", line 107, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+ERROR  2024-08-02 14:50:20,872  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11864  Internal Server Error: /user/active_users/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 167, in get
+    active_user_count = ActiveUserMiddleware.get_active_user_count()
+  File "D:\ProformaInvoice\Backend\users\middlewares.py", line 15, in get_active_user_count
+    active_sessions = Session.objects.filter(expire_date__gte=time.time())
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1406, in get_prep_value
+    value = super().get_prep_value(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1266, in get_prep_value
+    return self.to_python(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1367, in to_python
+    parsed = parse_datetime(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\dateparse.py", line 107, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+ERROR  2024-08-02 14:50:22,481  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11864  Internal Server Error: /user/active_users/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 167, in get
+    active_user_count = ActiveUserMiddleware.get_active_user_count()
+  File "D:\ProformaInvoice\Backend\users\middlewares.py", line 15, in get_active_user_count
+    active_sessions = Session.objects.filter(expire_date__gte=time.time())
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\sql\query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1406, in get_prep_value
+    value = super().get_prep_value(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1266, in get_prep_value
+    return self.to_python(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\fields\__init__.py", line 1367, in to_python
+    parsed = parse_datetime(value)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\dateparse.py", line 107, in parse_datetime
+    match = datetime_re.match(value)
+TypeError: expected string or bytes-like object
+WARNING  2024-08-02 19:13:10,480  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15844  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:13:19,883  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15844  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:13:33,313  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15844  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:19:12,682  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  336  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:23:04,542  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11488  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:23:10,968  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  12536  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:31:43,896  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  26228  Not Found: /favicon.ico 
+
+ERROR  2024-08-02 19:48:55,546  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19412  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 78, in create
+    region_instance = regionMaster.objects.get(RegionId=data['RegionId'])
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+masterdata.models.regionMaster.DoesNotExist: regionMaster matching query does not exist.
+ERROR  2024-08-02 19:49:21,155  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19412  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 78, in create
+    region_instance = regionMaster.objects.get(RegionId=data['RegionId'])
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+masterdata.models.regionMaster.DoesNotExist: regionMaster matching query does not exist.
+WARNING  2024-08-02 19:51:51,403  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  12760  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:52:00,384  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  12760  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:56:12,276  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13596  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:56:41,287  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25532  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:56:53,819  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25532  Bad Request: /data/ 
+
+WARNING  2024-08-02 19:59:30,623  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  21640  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:04:32,114  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  21572  Not Found: /signature/464S1241/SHANKAR_R_464S1241.JPG 
+
+ERROR  2024-08-02 20:20:30,840  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  2840  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 78, in create
+    region_instance = regionMaster.objects.get(RegionId=data['RegionId'])
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+masterdata.models.regionMaster.DoesNotExist: regionMaster matching query does not exist.
+ERROR  2024-08-02 20:20:54,699  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4388  Internal Server Error: /get_order_ack/print_with_signature/14765/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2285, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\signature\\464R0293\\RAJESH_SUBRAMANIAN_464R0293.JPG'
+WARNING  2024-08-02 20:21:35,074  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  2708  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:21:53,933  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15788  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:22:11,155  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15788  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:22:17,852  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15788  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:22:32,859  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  15788  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:29:25,948  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13064  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:31:30,793  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20648  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:34:39,036  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5220  Bad Request: /data/ 
+
+WARNING  2024-08-02 20:35:03,028  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5220  Bad Request: /data/ 
+
+ERROR  2024-08-02 20:38:52,935  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  12504  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 78, in create
+    region_instance = regionMaster.objects.get(RegionId=data['RegionId'])
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\db\models\query.py", line 435, in get
+    raise self.model.DoesNotExist(
+masterdata.models.regionMaster.DoesNotExist: regionMaster matching query does not exist.
+WARNING  2024-08-02 20:42:11,788  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  17556  Not Found: /signature/464S1241/SHANKAR_R_464S1241.JPG 
+
+WARNING  2024-08-02 22:29:42,479  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19276  Method Not Allowed: /user/login/ 
+
