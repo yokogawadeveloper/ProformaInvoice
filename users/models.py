@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import UserManager
 from django.core.exceptions import ValidationError
@@ -52,3 +53,12 @@ class UserSignature(models.Model):
         self.clean()
         super(UserSignature, self).save(*args, **kwargs)
 
+
+class ActiveUser(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    last_activity = models.DateTimeField(default=timezone.now)
+
+    objects = models.Manager()
+
+    class Meta:
+        unique_together = ('user',)

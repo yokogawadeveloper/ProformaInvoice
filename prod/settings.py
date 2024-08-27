@@ -10,13 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os, datetime
 import getpass
+import os
 from datetime import timedelta
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -27,8 +25,7 @@ SECRET_KEY = 'django-insecure-js_g312oaiw$vb9&9ptm7v@mpd$r*%_+1p0g0%6&et-hnf18-l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.29.15.212','10.29.15.142']
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -56,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'users.middleware.UpdateActiveUserMiddleware'  # user logged in count
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -81,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'prod.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -90,7 +87,7 @@ WSGI_APPLICATION = 'prod.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ProformaDB2.0',
+        'NAME': 'ProformaDB',
         'USER': 'postgres',
         'PASSWORD': 'Yokogawa@12345',
         'HOST': 'localhost',
@@ -100,7 +97,6 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "users.User"
-
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -127,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -141,14 +136,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'staticfiles'))]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -201,12 +194,10 @@ USER_ACCESS = getpass.getuser()
 
 USE_THOUSAND_SEPARATOR = True
 
-
 WKHTMLTOPDF_CMD = './wkhtmltopdf/bin/wkhtmltopdf'
 WKHTMLTOPDF_CMD_OPTIONS = {
     'quiet': True,
 }
-
 
 LOGGING = {
     'version': 1,
@@ -226,36 +217,38 @@ LOGGING = {
     },
     'handlers': {
         'null': {
-            'level':'INFO',
-            'class':'logging.NullHandler',
+            'level': 'INFO',
+            'class': 'logging.NullHandler',
         },
-        'console':{
+        'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
         # I always add this handler to facilitate separating loggings
-        'log_file':{
+        'log_file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(BASE_DIR, 'logs/qap.log'),
-            'maxBytes': 8388608, # 8megabytes
+            'maxBytes': 8388608,  # 8megabytes
             'formatter': 'verbose'
         },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['log_file','console'],
+            'handlers': ['log_file', 'console'],
             'level': 'DEBUG',
             'propagate': True,
         },
-        'machine': { # I keep all my of apps under 'apps' folder, but you can also add them one by one, and this depends on how your virtualenv/paths are set
-            'handlers': ['log_file','console'],
+        'machine': {
+            # I keep all my of apps under 'apps' folder, but you can also add them one by one, and this depends on how your virtualenv/paths are set
+            'handlers': ['log_file', 'console'],
             'level': 'DEBUG',
             'propagate': True,
         },
-        'users': { # I keep all my of apps under 'apps' folder, but you can also add them one by one, and this depends on how your virtualenv/paths are set
-            'handlers': ['log_file','console'],
+        'users': {
+            # I keep all my of apps under 'apps' folder, but you can also add them one by one, and this depends on how your virtualenv/paths are set
+            'handlers': ['log_file', 'console'],
             'level': 'DEBUG',
             'propagate': True,
         },

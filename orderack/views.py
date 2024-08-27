@@ -1751,16 +1751,6 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
                             if i['FreightPercent'] is not None:
                                 j['Freight_Percent'] = i['FreightPercent']
 
-        ##        for index, j in enumerate(data['order']):
-        ##            if j['ProformaItemid'] is not None:
-        ##                if j['ItemNo'] is not None:
-        ##                    count += 1
-        ##                    j['counter'] = count
-        ##                else:
-        ##                    j['counter'] = 0
-        ##            else:
-        ##                count += 1
-        ##                j['counter'] = count
 
         data['Type'] = data['order'][0]['Type']
 
@@ -1958,7 +1948,7 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
             image64 = 'data:image/png;base64,{}'.format(encoded_string)
 
             data['pdf_header_logo'] = image64
-
+        # return Response(data)
         pdf_response = PDFTemplateResponse(
             request=request,
             template='invoice_with_icici_sbi.html',

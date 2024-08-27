@@ -449,3 +449,109 @@ WARNING  2024-08-02 20:42:11,788  D:\ProformaInvoice\Backend\venv\lib\site-packa
 
 WARNING  2024-08-02 22:29:42,479  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19276  Method Not Allowed: /user/login/ 
 
+ERROR  2024-08-06 11:43:08,003  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23476  Internal Server Error: /get_order_ack/print_with_signature/14571/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2285, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464_0521\\signature_OT2nMZH.png'
+WARNING  2024-08-06 11:55:37,775  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  18656  Unauthorized: /get_order_ack/invoice_with_icici_sbi/14571/ 
+
+WARNING  2024-08-06 12:57:26,057  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24756  Unauthorized: /get_order_ack/invoice_with_icici_sbi/14571/ 
+
+WARNING  2024-08-06 14:06:40,207  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  17896  Unauthorized: /user_list/ 
+
+WARNING  2024-08-06 14:06:40,214  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14584  Unauthorized: /proforma_master_list/14470/ 
+
+WARNING  2024-08-06 14:06:40,269  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9420  Unauthorized: /division_master_list/ 
+
+WARNING  2024-08-06 14:06:40,273  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23652  Unauthorized: /category_master_list/ 
+
+WARNING  2024-08-06 14:06:40,319  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23652  Unauthorized: /region_master_list/ 
+
+WARNING  2024-08-06 14:06:40,337  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20916  Unauthorized: /projectmanager_master_list/ 
+
+WARNING  2024-08-06 14:21:22,778  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25032  Not Found: /favicon.ico 
+
+WARNING  2024-08-06 14:21:35,793  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25032  Not Found: /users/active_user 
+
+WARNING  2024-08-06 14:23:36,771  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:24:23,540  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:25:22,711  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:26:57,880  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:27:01,034  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:27:09,511  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:27:14,361  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:27:16,632  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19268  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:27:50,487  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  10292  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:28:52,616  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  7140  Method Not Allowed: /user/login/ 
+
+WARNING  2024-08-06 14:29:21,472  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:29:23,847  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:29:32,084  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:29:33,211  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:29:34,478  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19776  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:30:37,287  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20732  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:31:56,572  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16048  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:34:51,793  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16048  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:35:28,572  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16048  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:36:58,971  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16048  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:41:32,589  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11524  Unauthorized: /user/active_user/ 
+
+WARNING  2024-08-06 14:42:12,640  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11524  Unauthorized: /user/active_user/ 
+
+ERROR  2024-08-12 14:27:44,694  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  17660  Internal Server Error: /get_order_ack/print_with_signature/14887/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2275, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464_0521\\signature_OT2nMZH.png'

@@ -1,18 +1,18 @@
 import os.path
 import pandas as pd
 from datetime import datetime
-
+from django.utils import timezone
 from django.db.models import Q
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-
 from users.auth_backend import PasswordlessAuthBackend as pwdless
-from users.models import User
+from users.models import User, ActiveUser
 from users.serializer import UserSerializer
 from users.user_csv_data import userDataList
+from datetime import timedelta
 
 
 class TokenObtainPairWithoutPasswordSerializer(TokenObtainPairSerializer):
@@ -155,3 +155,11 @@ class updateProformaAccessForNoneSuperUser(APIView):
         user = User.objects.filter(id=id).first()
         user.is_superuser = request.data.get("is_superuser")
         user.save()
+
+
+class ActiveUserCountView(APIView):
+    def get(self, request):
+        now = timezone.now()
+        time_threshold = now - timedelta(minutes=5)
+        active_users_count = ActiveUser.objects.filter(last_activity__gte=time_threshold).count()
+        return Response({'active_users_count': active_users_count})
