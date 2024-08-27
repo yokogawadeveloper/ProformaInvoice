@@ -22,6 +22,7 @@ class User(AbstractUser):
     CreatedAt = models.DateTimeField(auto_now_add=True)
     Isadmin = models.BooleanField(default=False)
     is_special = models.BooleanField(default=False)
+    is_gdci = models.BooleanField(default=False)
     Delete = models.IntegerField(default=0)
 
     objects = UserManager()

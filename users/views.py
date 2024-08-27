@@ -44,6 +44,7 @@ class TokenObtainPairWithoutPasswordSerializer(TokenObtainPairSerializer):
         data['is_superuser'] = self.user.is_superuser
         data["Isadmin"] = self.user.Isadmin
         data["is_special"] = self.user.is_special
+        data["is_gdci"] = self.user.is_gdci
         data['division'] = self.user.division
         data['category'] = self.user.category
         data['pm'] = self.user.project_manager

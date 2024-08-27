@@ -82,8 +82,6 @@ WSGI_APPLICATION = 'prod.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-##DATABASE_ROUTERS = ['prod.db_router.SecondExternalDBRouter']
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
