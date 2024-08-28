@@ -19,8 +19,8 @@ class orderAcknowledgementHistorySerializer(serializers.ModelSerializer):
 
 
 class orderAcknowledgementSerializer(serializers.ModelSerializer):
-##    order = orderAcknowledgementHistorySerializer(many=True, allow_null=True, read_only=True)
     order = serializers.SerializerMethodField()
+    total_amount_with_tcs_in_words = serializers.ReadOnlyField()
 
     class Meta:
         model = orderAcknowledgement
@@ -40,20 +40,12 @@ class orderAcknowledgementSerializer(serializers.ModelSerializer):
 
 
 class orderAckSerializer(serializers.ModelSerializer):
-##    order = orderAcknowledgementHistorySerializer(many=True, allow_null=True, read_only=True)
     order = serializers.SerializerMethodField()
 
     class Meta:
         model = orderAcknowledgement
         fields = '__all__'
 
-##    def to_representation(self, instance):
-##        primitive_repr = super().to_representation(instance)
-        # primitive_repr['SubmittedDate'] = datetime.datetime.strptime(str(instance.SubmittedDate), '%Y-%m-%d').date()
-        # primitive_repr['SubmittedDate'] = primitive_repr['SubmittedDate'].strftime("%d/%m/%Y")
-        # primitive_repr['PI_DueDate'] = datetime.datetime.strptime(str(instance.PI_DueDate), '%Y-%m-%d').date()
-        # primitive_repr['PI_DueDate'] = primitive_repr['PI_DueDate'].strftime("%d/%m/%Y")
-##        return primitive_repr
 
     def get_order(self, instance):
         items = instance.order.all().order_by('OrderAck_HistoryId')

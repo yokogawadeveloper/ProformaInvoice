@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'prod.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ProformaDB',
+        'NAME': 'ProformaLocal',
         'USER': 'postgres',
         'PASSWORD': 'Yokogawa@12345',
         'HOST': 'localhost',
@@ -95,13 +95,6 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = "users.User"
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     ],
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

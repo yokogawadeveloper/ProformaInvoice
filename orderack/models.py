@@ -1,13 +1,14 @@
 from django.db import models
 from users.models import User
+import inflect
 from excelupload.models import proformaItem, proformaItemMaster
+
 
 # Create your models here.
 
 
 class orderAcknowledgement(models.Model):
     OrderAckId = models.AutoField(primary_key=True, unique=True)
-    # ProformaID = models.IntegerField(null=True, blank=True)
     ProformaID = models.ForeignKey(proformaItemMaster, null=True, on_delete=models.CASCADE)
     RevNo = models.IntegerField(null=True)
     Advance = models.FloatField(default=0.00, null=True)
@@ -49,10 +50,35 @@ class orderAcknowledgement(models.Model):
 
     UpdatedBy = models.ForeignKey(User, related_name='+', null=True, on_delete=models.CASCADE)
     UpdatedDate = models.DateTimeField(auto_now_add=True, null=True)
-
     deleted_remarks = models.CharField(max_length=500, null=True)
 
+    # for 2669 IT Request
+    gdci_invoice_name = models.CharField(max_length=500, null=True, blank=True)
+    gdci_project_manger = models.CharField(max_length=500, null=True, blank=True)
+    gdci_remarks = models.TextField(null=True, blank=True)
+
     objects = models.Manager()
+
+    @property
+    def total_amount_with_tcs_in_words(self):
+        p = inflect.engine()
+
+        whole, fraction = str(self.TotalAmountWithTCS).split(".")
+
+        # Break the whole number into chunks
+        thousands, remainder = divmod(int(whole), 1000)
+
+        # Convert thousands and remainder
+        thousands_words = " ".join([p.number_to_words(digit) for digit in str(thousands)])
+        remainder_words = p.number_to_words(remainder)
+
+        # Convert fraction part
+        fraction_words = " ".join([p.number_to_words(digit) for digit in fraction])
+
+        # Combine the words
+        result = f"{thousands_words} thousand {remainder_words} point {fraction_words}"
+
+        return result.capitalize()
 
 
 class orderAcknowledgementHistory(models.Model):
@@ -67,7 +93,6 @@ class orderAcknowledgementHistory(models.Model):
     APBGDetails = models.CharField(null=True, max_length=1000)
     PartName = models.CharField(null=True, max_length=255)
     HSN = models.CharField(null=True, max_length=50)
-##    Qty = models.IntegerField(null=True)
     Qty = models.FloatField(default=0.00, null=True, blank=True)
     UOM = models.CharField(null=True, max_length=50)
     UnitPrice = models.FloatField(default=0.00, null=True)
@@ -92,8 +117,6 @@ class orderAcknowledgementHistory(models.Model):
     TotalAdvance = models.FloatField(default=0.00, null=True)
     TotalRetention = models.FloatField(default=0.00, null=True)
     GSTBaseValue = models.FloatField(default=0.00, null=True)
-
-##    PI_Qty = models.IntegerField(null=True)
     PI_Qty = models.FloatField(default=0.00, null=True, blank=True)
     PI_Discount = models.FloatField(default=0.00, null=True)
     PI_Pf = models.FloatField(default=0.00, null=True)
@@ -105,6 +128,3 @@ class orderAcknowledgementHistory(models.Model):
     # PI_Sum_of_TotalAmount = models.FloatField(default=0.00, null=True)
 
     objects = models.Manager()
-
-
-
