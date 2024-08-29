@@ -642,3 +642,32 @@ Traceback (most recent call last):
   File "D:\ProformaInvoice\Backend\users\auth_backend.py", line 20, in authenticate
     user = User.objects.get(username=username['username'])
 KeyError: 'username'
+ERROR  2024-08-28 10:32:08,443  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24564  Internal Server Error: /user/login/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\generic\base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework_simplejwt\views.py", line 27, in post
+    serializer.is_valid(raise_exception=True)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "D:\ProformaInvoice\Backend\users\views.py", line 27, in validate
+    user = pwdless.authenticate(self, attrs)
+  File "D:\ProformaInvoice\Backend\users\auth_backend.py", line 20, in authenticate
+    user = User.objects.get(username=username['username'])
+KeyError: 'username'
