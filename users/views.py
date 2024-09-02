@@ -161,6 +161,6 @@ class updateProformaAccessForNoneSuperUser(APIView):
 class ActiveUserCountView(APIView):
     def get(self, request):
         now = timezone.now()
-        time_threshold = now - timedelta(minutes=5)
+        time_threshold = now - timedelta(minutes=30)
         active_users_count = ActiveUser.objects.filter(last_activity__gte=time_threshold).count()
         return Response({'active_users_count': active_users_count})

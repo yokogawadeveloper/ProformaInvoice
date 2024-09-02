@@ -61,24 +61,57 @@ class orderAcknowledgement(models.Model):
 
     @property
     def total_amount_with_tcs_in_words(self):
-        p = inflect.engine()
+        def convert_number_to_words(number):
+            """Convert a number into words."""
+            ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+            teens = ['Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen',
+                     'Nineteen']
+            tens = ['Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+            thousands = ['', 'Thousand']
 
-        whole, fraction = str(self.TotalAmountWithTCS).split(".")
+            def _convert_hundred(number):
+                if number == 0:
+                    return ''
+                elif number < 10:
+                    return ones[number]
+                elif number < 20:
+                    return teens[number - 11]
+                elif number < 100:
+                    return tens[number // 10 - 1] + ('' if number % 10 == 0 else ' ' + ones[number % 10])
+                else:
+                    return ones[number // 100] + ' Hundred' + (
+                        '' if number % 100 == 0 else ' ' + _convert_hundred(number % 100))
 
-        # Break the whole number into chunks
-        thousands, remainder = divmod(int(whole), 1000)
+            def _convert(number):
+                if number == 0:
+                    return 'Zero'
+                result = ''
+                if number >= 1000:
+                    result += _convert_hundred(number // 1000) + ' Thousand'
+                    number %= 1000
+                if number > 0:
+                    if result:
+                        result += ' '
+                    result += _convert_hundred(number)
+                return result
 
-        # Convert thousands and remainder
-        thousands_words = " ".join([p.number_to_words(digit) for digit in str(thousands)])
-        remainder_words = p.number_to_words(remainder)
+            return _convert(number)
 
-        # Convert fraction part
-        fraction_words = " ".join([p.number_to_words(digit) for digit in fraction])
+        def amount_to_words(amount):
+            """Convert an amount to words."""
+            dollars, cents = int(amount), round((amount - int(amount)) * 100)
+            dollar_words = convert_number_to_words(dollars)
+            cent_words = convert_number_to_words(cents)
 
-        # Combine the words
-        result = f"{thousands_words} thousand {remainder_words} point {fraction_words}"
+            dollar_str = f"{dollar_words} US Dollar" + ('s' if dollars != 1 else '')
+            cent_str = f"{cent_words} Cent" + ('s' if cents != 1 else '')
 
-        return result.capitalize()
+            if cents > 0:
+                return f"{dollar_str} and {cent_str}"
+            else:
+                return f"{dollar_str} and Zero Cents"
+
+        return amount_to_words(self.TotalAmountWithTCS)
 
 
 class orderAcknowledgementHistory(models.Model):
