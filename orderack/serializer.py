@@ -4,14 +4,9 @@ from .models import orderAcknowledgement, orderAcknowledgementHistory
 
 
 class orderAcknowledgementHistorySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = orderAcknowledgementHistory
         fields = '__all__'
-
-    # def to_representation(self, data):
-    #     if data.DeleteFlag is not True:
-    #         return super(orderAcknowledgementHistorySerializer, self).to_representation(data)
 
     def create(self, validated_data):
         validated_data['SubmittedBy'] = self.context['request'].user

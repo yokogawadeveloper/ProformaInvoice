@@ -671,3 +671,359 @@ Traceback (most recent call last):
   File "D:\ProformaInvoice\Backend\users\auth_backend.py", line 20, in authenticate
     user = User.objects.get(username=username['username'])
 KeyError: 'username'
+ERROR  2024-09-02 11:47:31,585  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20036  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 168, in gdci_payment_term_split
+    text = re.sub(r'Note.*$', 'Note', self.PaymentTerms, flags=re.DOTALL)
+  File "C:\Users\464_0521\AppData\Local\Programs\Python\Python39\lib\re.py", line 210, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+TypeError: expected string or bytes-like object
+ERROR  2024-09-02 11:48:09,095  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  10260  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 168, in gdci_payment_term_split
+    text = re.sub(r'Note.*$', 'Note', self.PaymentTerms, flags=re.DOTALL)
+  File "C:\Users\464_0521\AppData\Local\Programs\Python\Python39\lib\re.py", line 210, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+TypeError: expected string or bytes-like object
+ERROR  2024-09-02 11:50:18,393  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  10260  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 168, in gdci_payment_term_split
+    text = re.sub(r'Note.*$', 'Note', self.PaymentTerms, flags=re.DOTALL)
+  File "C:\Users\464_0521\AppData\Local\Programs\Python\Python39\lib\re.py", line 210, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+TypeError: expected string or bytes-like object
+ERROR  2024-09-02 11:51:20,271  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19928  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 169, in gdci_payment_term_split
+    raise ValueError("PaymentTerms must be a string")
+ValueError: PaymentTerms must be a string
+ERROR  2024-09-02 11:51:53,842  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5288  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 170, in gdci_payment_term_split
+    raise ValueError("PaymentTerms must be a string")
+ValueError: PaymentTerms must be a string
+ERROR  2024-09-02 11:52:43,820  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5288  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2306, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 170, in gdci_payment_term_split
+    raise ValueError("PaymentTerms must be a string")
+ValueError: PaymentTerms must be a string
+ERROR  2024-09-02 11:57:17,139  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19560  Internal Server Error: /get_order_ack/invoice_for_gdci_mizuho_bank/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2307, in invoice_for_gdci_mizuho_bank
+    data = serializer.data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 515, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 1882, in to_representation
+    return method(value)
+  File "D:\ProformaInvoice\Backend\orderack\serializer.py", line 27, in get_order
+    return orderAcknowledgementHistorySerializer(items, many=True).data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 170, in gdci_payment_term_split
+    raise ValueError("PaymentTerms must be a string")
+ValueError: PaymentTerms must be a string
+ERROR  2024-09-02 11:57:51,822  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20124  Internal Server Error: /get_order_ack/print_with_signature/15176/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464_0521\\signature_OT2nMZH.png'

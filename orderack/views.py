@@ -1,6 +1,7 @@
 import base64
 import datetime
 import os
+import re
 from datetime import timedelta
 from django.db.models import Count
 from django.http import HttpResponse
@@ -2557,6 +2558,9 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
             if "Payment Terms:" in data['PaymentTerms']:
                 data['PaymentTerms'] = data['PaymentTerms'].split('Payment Terms:')
                 data['PaymentTerms'] = data['PaymentTerms'][1]
+                # Use regular expression to keep only the text before "Note:"
+                data['PaymentTerms'] = re.sub(r'Note.*$', '', data['PaymentTerms'], flags=re.DOTALL)
+                # data['PaymentTerms'] = text.split()
 
         data['length'] = len(data['order'])
 
@@ -2899,6 +2903,9 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
             if "Payment Terms:" in data['PaymentTerms']:
                 data['PaymentTerms'] = data['PaymentTerms'].split('Payment Terms:')
                 data['PaymentTerms'] = data['PaymentTerms'][1]
+                # Use regular expression to keep only the text before "Note:"
+                data['PaymentTerms'] = re.sub(r'Note.*$', '', data['PaymentTerms'], flags=re.DOTALL)
+                # data['PaymentTerms'] = text.split()
 
         data['length'] = len(data['order'])
 
