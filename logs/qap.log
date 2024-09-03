@@ -1027,3 +1027,131 @@ Traceback (most recent call last):
   File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
     with open(signature_path, "rb") as image_file:
 FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464_0521\\signature_OT2nMZH.png'
+WARNING  2024-09-03 08:39:49,470  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5124  Not Found: /struts2-showcase/struts/utils.js 
+
+WARNING  2024-09-03 08:39:49,956  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  2176  Not Found: /js/ 
+
+WARNING  2024-09-03 08:39:51,430  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19024  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:51,459  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14784  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:51,627  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  656  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:51,647  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  17288  Not Found: /struts2-showcase/struts/tooltip.gif 
+
+WARNING  2024-09-03 08:39:51,725  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9780  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:51,848  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  7560  Not Found: /struts2-showcase/struts/domtt.css 
+
+WARNING  2024-09-03 08:39:51,990  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  5884  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:51,994  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  18268  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:52,076  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9904  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:52,269  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  11960  Method Not Allowed: / 
+
+WARNING  2024-09-03 08:39:52,334  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  3224  Not Found: /api/ 
+
+WARNING  2024-09-03 08:39:52,366  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  8704  Not Found: /api/v2/${jndi:dns://MDEDiscoverye037770028SeenInTheWildGet-8000} 
+
+WARNING  2024-09-03 08:39:52,434  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  18632  Not Found: /login 
+
+WARNING  2024-09-03 08:39:52,469  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  1252  Not Found: /index.html 
+
+WARNING  2024-09-03 08:39:52,654  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  17760  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:52,717  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  19424  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:52,869  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  7688  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:52,890  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  18884  Not Found: /login 
+
+WARNING  2024-09-03 08:39:52,953  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  10656  Not Found: /:undefined 
+
+WARNING  2024-09-03 08:39:53,019  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  18820  Not Found: /:undefined 
+
+ERROR  2024-09-03 10:04:15,956  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14288  Internal Server Error: /get_order_ack/print_with_signature/15179/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464-4165\\PurushothamNaik_Prdopd4.jpg'
+ERROR  2024-09-03 10:04:21,628  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14288  Internal Server Error: /get_order_ack/print_with_signature/15179/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464-4165\\PurushothamNaik_Prdopd4.jpg'
+ERROR  2024-09-03 10:04:39,030  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14288  Internal Server Error: /get_order_ack/print_with_signature/15179/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464-4165\\PurushothamNaik_Prdopd4.jpg'
+ERROR  2024-09-03 10:04:52,901  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14288  Internal Server Error: /get_order_ack/print_with_signature/15179/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
+    with open(signature_path, "rb") as image_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464-4165\\PurushothamNaik_Prdopd4.jpg'
