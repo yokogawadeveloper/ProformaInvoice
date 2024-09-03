@@ -1155,3 +1155,126 @@ Traceback (most recent call last):
   File "D:\ProformaInvoice\Backend\orderack\views.py", line 2273, in print_with_signature
     with open(signature_path, "rb") as image_file:
 FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464-4165\\PurushothamNaik_Prdopd4.jpg'
+ERROR  2024-09-03 17:45:00,758  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4556  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 103, in create
+    return Response({'value': True, 'data': serializer.data})
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 115, in total_amount_with_tcs_in_words
+    return amount_to_words(self.TotalAmountWithTCS)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 104, in amount_to_words
+    dollar_words = convert_number_to_words(dollars)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 99, in convert_number_to_words
+    return _convert(number)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 91, in _convert
+    result += _convert_hundred(number // 1000) + ' Thousand'
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 83, in _convert_hundred
+    return ones[number // 100] + ' Hundred' + (
+IndexError: list index out of range
+ERROR  2024-09-03 17:45:07,901  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4556  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 103, in create
+    return Response({'value': True, 'data': serializer.data})
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 115, in total_amount_with_tcs_in_words
+    return amount_to_words(self.TotalAmountWithTCS)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 104, in amount_to_words
+    dollar_words = convert_number_to_words(dollars)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 99, in convert_number_to_words
+    return _convert(number)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 91, in _convert
+    result += _convert_hundred(number // 1000) + ' Thousand'
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 83, in _convert_hundred
+    return ones[number // 100] + ' Hundred' + (
+IndexError: list index out of range
+ERROR  2024-09-03 17:45:27,682  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4556  Internal Server Error: /get_order_ack/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 103, in create
+    return Response({'value': True, 'data': serializer.data})
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\serializers.py", line 502, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 457, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\fields.py", line 97, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 115, in total_amount_with_tcs_in_words
+    return amount_to_words(self.TotalAmountWithTCS)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 104, in amount_to_words
+    dollar_words = convert_number_to_words(dollars)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 99, in convert_number_to_words
+    return _convert(number)
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 91, in _convert
+    result += _convert_hundred(number // 1000) + ' Thousand'
+  File "D:\ProformaInvoice\Backend\orderack\models.py", line 83, in _convert_hundred
+    return ones[number // 100] + ' Hundred' + (
+IndexError: list index out of range

@@ -68,7 +68,7 @@ class orderAcknowledgement(models.Model):
             teens = ['Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen',
                      'Nineteen']
             tens = ['Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
-            thousands = ['', 'Thousand']
+            thousands = ['', 'Thousand', 'Million', 'Billion', 'Trillion']
 
             def _convert_hundred(number):
                 if number == 0:
@@ -87,14 +87,12 @@ class orderAcknowledgement(models.Model):
                 if number == 0:
                     return 'Zero'
                 result = ''
-                if number >= 1000:
-                    result += _convert_hundred(number // 1000) + ' Thousand'
-                    number %= 1000
-                if number > 0:
-                    if result:
-                        result += ' '
-                    result += _convert_hundred(number)
-                return result
+                for idx, thousand in enumerate(thousands):
+                    if number % 1000 != 0:
+                        result = _convert_hundred(number % 1000) + ' ' + thousand + (
+                            '' if result == '' else ' ' + result)
+                    number //= 1000
+                return result.strip()
 
             return _convert(number)
 

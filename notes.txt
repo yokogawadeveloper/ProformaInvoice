@@ -4,6 +4,13 @@ username : 35000738
 pass : Yil@12345
 
 Other User pass:
-
 pass : Yokogawa@12345
 
+
+Important:
+
+1. is_superuser : Will be able to show all menubar
+2. is_special : Will be able to for only print with signature
+3. is_gdci : For MUFG and Mihoz bank only
+
+4. consider "Prod4" username for Purushotham Naik M
