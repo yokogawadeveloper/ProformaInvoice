@@ -178,7 +178,7 @@
     <!--   material description-->
     <table class="f12 description" style="width:100%;">
         <tr>
-            <td class="left top right bottom line-spacing" style="height: fit-content;width: fit-content; padding-bottom: 100px; " valign="top">
+            <td class="left top right bottom line-spacing" style="height: 355px; padding: 0px;" valign="top">
                 <table style="width:100%; margin-top: 2px;border: none;letter-spacing: 1px;" align="center" border="0">
                     <tbody>
                         {% if Type == "M" %}
@@ -590,7 +590,6 @@
         </tbody>
     </table>
 
-
     <!-- change 2 start just included static-content value here -->
     <table class="left top right bottom f14" style="width:100%;" align="center" >
         <tbody>
@@ -599,6 +598,7 @@
                   <div style="padding-top: 0px;"><b>PAYMENT TERMS : </b>{{PaymentTerms}}</div>
                   <hr style="border: 1px solid #000;">
                   <!-- bank with ICICI  -->
+                  {% if unitType == 'INR' %}
                   <div><b>Account Name : </b>Yokogawa India Limited</div>
                   <div><b>Bank Name & Address : </b>ICICI Bank Ltd., ICICI Bank Towers, 1st Floor, West Wing, 1 Commissariat Road, Bangalore - 560025.</div>
                   <div><b>Bank A/C No. : </b>000205001388</div>
@@ -609,6 +609,19 @@
                   <div><b>Bank Name & Address : </b>State Bank Of India, Industrial Finance Branch, 61, Residency Plaza, Residency Road, Bangalore — 560025.</div>
                   <div><b>Bank A/C No. : </b>10503343001</div>
                   <div><b>IFSC Code : </b>SBIN0009077</div>
+                  {% endif %}
+                  {% if unitType == 'USD' %}
+                      <div><b>Account Name : </b>Yokogawa India Limited</div>
+                      <div><b>Bank Name & Address : </b>Mizuho Bank Ltd. Bangalore-Devanahalli Branch, 462/440/339, 2nd Floor, Near Jain Temple, N.H.7/4-207. B.B.Road, Vijayapura Cross, Devanahalli Town,
+                      Bangalore Rural District, KA 562 110 INDIA.</div>
+                      <div><b>Bank A/C No. : </b>F10-716-000183</div>
+                      <div><b>SWIFT Code : </b>MHCBINBB</div>
+                      <hr>
+                      <div><b>Account Name : </b>Yokogawa India Limited</div>
+                      <div><b>Bank Name & Address : </b>MUFG Bank Ltd,Unit No 701, 7th Floor, World Trade Center, Bridge Gateway, Campus 26/1, Dr. RajKumar Road, Malleswaram, Bangalore - 560055, Karnataka ,INDIA.</div>
+                      <div><b>Bank A/C No. : </b>00000892</div>
+                      <div><b>IFSC Code : </b>BOTM0BL3626</div>
+                  {% endif %}
               </td>
             <td class="left top right bottom" style="padding: 0px;">
                 <div><p>CONSIGNEE : {{Consignee}}</p></div>

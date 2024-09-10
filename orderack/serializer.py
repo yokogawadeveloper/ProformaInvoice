@@ -15,7 +15,6 @@ class orderAcknowledgementHistorySerializer(serializers.ModelSerializer):
 
 class orderAcknowledgementSerializer(serializers.ModelSerializer):
     order = serializers.SerializerMethodField()
-    total_amount_with_tcs_in_words = serializers.ReadOnlyField()
 
     class Meta:
         model = orderAcknowledgement

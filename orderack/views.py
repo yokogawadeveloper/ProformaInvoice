@@ -31,7 +31,73 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
     queryset = orderAcknowledgement.objects.all()
     serializer_class = orderAcknowledgementSerializer
+    # changes for 2669
+    @staticmethod
+    def convert_number_to_words(number):
+        """Convert a number into words."""
+        ones = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+        teens = ['Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen',
+                 'Nineteen']
+        tens = ['Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+        thousands = ['', 'Thousand', 'Million', 'Billion', 'Trillion']
 
+        def _convert_hundred(number):
+            if number == 0:
+                return ''
+            elif number < 10:
+                return ones[number]
+            elif number < 20:
+                return teens[number - 11]
+            elif number < 100:
+                return tens[number // 10 - 1] + ('' if number % 10 == 0 else ' ' + ones[number % 10])
+            else:
+                return ones[number // 100] + ' Hundred' + (
+                    '' if number % 100 == 0 else ' ' + _convert_hundred(number % 100))
+
+        def _convert(number):
+            if number == 0:
+                return 'Zero'
+            result = ''
+            for idx, thousand in enumerate(thousands):
+                if number % 1000 != 0:
+                    result = _convert_hundred(number % 1000) + ' ' + thousand + (
+                        '' if result == '' else ' ' + result)
+                number //= 1000
+            return result.strip()
+
+        return _convert(number)
+
+    @staticmethod
+    def convert_cents_to_words(cents):
+        """Convert cents to words."""
+        ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+        teens = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen',
+                 'Nineteen']
+        tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+
+        if cents < 10:
+            return ones[cents]
+        elif cents < 20:
+            return teens[cents - 10]
+        else:
+            ten, one = divmod(cents, 10)
+            return tens[ten] + ('-' + ones[one] if one else '')
+
+    @staticmethod
+    def amount_to_words(amount):
+        """Convert an amount to words."""
+        dollars, cents = int(amount), round((amount - int(amount)) * 100)
+        dollar_words = orderAcknowledgementViewSet.convert_number_to_words(dollars)
+        cent_words = orderAcknowledgementViewSet.convert_cents_to_words(cents)
+
+        dollar_str = f"{dollar_words} US Dollar" + ('s' if dollars != 1 else '')
+        cent_str = f"{cent_words} Cent" + ('s' if cents != 1 else '')
+
+        if cents > 0:
+            return f"{dollar_str} and {cent_str}"
+        else:
+            return f"{dollar_str} and Zero Cents"
+    # end for 2669
     def get_queryset(self):
         query_set = self.queryset.exclude(DeleteFlag=True).order_by('OrderAckId')
         return query_set
@@ -2629,8 +2695,9 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
         with open(path, "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode('ascii')
             image64 = 'data:image/png;base64,{}'.format(encoded_string)
-
             data['pdf_header_logo'] = image64
+        # conversion of amount
+        data['total_amount_with_tcs_in_words'] = self.amount_to_words(amount=data['TotalAmountWithTCS'])
         # return Response(data)
         pdf_response = PDFTemplateResponse(
             request=request,
@@ -2974,9 +3041,9 @@ class orderAcknowledgementViewSet(viewsets.ModelViewSet):
         with open(path, "rb") as image_file:
             encoded_string = base64.b64encode(image_file.read()).decode('ascii')
             image64 = 'data:image/png;base64,{}'.format(encoded_string)
-
             data['pdf_header_logo'] = image64
-        # return Response(data)
+        # conversion of amount
+        data['total_amount_with_tcs_in_words'] = self.amount_to_words(amount=data['TotalAmountWithTCS'])
         pdf_response = PDFTemplateResponse(
             request=request,
             template='invoice_for_gdci_mufg_bank.html',
