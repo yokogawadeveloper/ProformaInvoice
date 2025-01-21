@@ -1,7 +1,7 @@
 Proforma Invoice admin credentials :
 
-username : 35000738
-pass : Yil@12345
+username/admin : 35000738
+pass : admin@12345
 
 Other User pass:
 pass : Yokogawa@12345
@@ -12,5 +12,17 @@ Important:
 1. is_superuser : Will be able to show all menubar
 2. is_special : Will be able to for only print with signature
 3. is_gdci : For MUFG and Mihoz bank only
+4. consider example "Prod4" username for Purushotham Naik M
 
-4. consider "Prod4" username for Purushotham Naik M
+-----------------------How Amount Fix-----------------------------
+
+0. Amount related issue comes from "orderAcknowledgement" Table
+where docNo connect with "proformaItemMaster"  Table
+
+1. in "item" keyword all orderAcknowledgementHistory coming where All GST is comes
+2. subtotal comes from orderAcknowledgement Table
+
+----------------------How signature works----------------------------------
+1. If username in user table the login django admin
+2. in signatureuser table create new entry and choose username and upload image
+3. make "is_special" user True

@@ -1561,3 +1561,138 @@ Traceback (most recent call last):
   File "D:\ProformaInvoice\Backend\orderack\views.py", line 2339, in print_with_signature
     with open(signature_path, "rb") as image_file:
 FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ProformaInvoice\\Backend\\media\\signature\\464_0521\\signature_OT2nMZH.png'
+WARNING  2024-09-10 15:02:39,463  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14572  Unauthorized: /user/login/ 
+
+ERROR  2024-12-02 10:00:52,878  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  3088  Internal Server Error: /get_order_ack/proforma_report_list/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 1307, in proforma_report_list
+    excel = dataListToExcel(data)
+  File "D:\ProformaInvoice\Backend\orderack\export_to_excel.py", line 43, in dataListToExcel
+    df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date()  # Corrected date format
+TypeError: strptime() argument 1 must be str, not None
+ERROR  2024-12-02 10:06:38,161  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14880  Internal Server Error: /get_order_ack/proforma_report_list/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 1307, in proforma_report_list
+    excel = dataListToExcel(data)
+  File "D:\ProformaInvoice\Backend\orderack\export_to_excel.py", line 43, in dataListToExcel
+    df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date()  # Corrected date format
+TypeError: strptime() argument 1 must be str, not None
+ERROR  2024-12-02 10:08:44,310  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9220  Internal Server Error: /get_order_ack/proforma_report_list/ 
+Traceback (most recent call last):
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\ProformaInvoice\Backend\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ProformaInvoice\Backend\orderack\views.py", line 1307, in proforma_report_list
+    excel = dataListToExcel(data)
+  File "D:\ProformaInvoice\Backend\orderack\export_to_excel.py", line 43, in dataListToExcel
+    df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date()  # Corrected date format
+TypeError: strptime() argument 1 must be str, not None
+WARNING  2025-01-02 14:12:36,186  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24688  Unauthorized: /user/active_user/ 
+
+WARNING  2025-01-02 14:12:36,198  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  21048  Unauthorized: /user_list/ 
+
+WARNING  2025-01-02 14:12:36,205  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24688  Unauthorized: /proforma_master_list/15109/ 
+
+WARNING  2025-01-02 14:12:36,213  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24616  Unauthorized: /division_master_list/ 
+
+WARNING  2025-01-02 14:12:36,219  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24748  Unauthorized: /category_master_list/ 
+
+WARNING  2025-01-02 14:12:36,231  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24736  Unauthorized: /region_master_list/ 
+
+WARNING  2025-01-02 14:12:36,246  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24756  Unauthorized: /projectmanager_master_list/ 
+
+WARNING  2025-01-02 14:21:27,379  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20804  Not Found: /struts2-showcase/struts/utils.js 
+
+WARNING  2025-01-02 14:21:27,497  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  22856  Not Found: /js/ 
+
+WARNING  2025-01-02 14:21:28,554  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  13128  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:28,592  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  21656  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:28,896  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16320  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:28,962  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23028  Not Found: /struts2-showcase/struts/tooltip.gif 
+
+WARNING  2025-01-02 14:21:29,014  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4056  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:29,155  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  14192  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:29,240  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25136  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:29,487  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  22504  Not Found: /struts2-showcase/struts/domtt.css 
+
+WARNING  2025-01-02 14:21:29,623  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25936  Not Found: /api/ 
+
+WARNING  2025-01-02 14:21:29,739  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  4072  Method Not Allowed: / 
+
+WARNING  2025-01-02 14:21:29,759  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  2960  Not Found: /login 
+
+WARNING  2025-01-02 14:21:29,772  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  23492  Not Found: /api/v2/${jndi:dns://MDEDiscoverye037770028SeenInTheWildGet-8000} 
+
+WARNING  2025-01-02 14:21:29,776  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9936  Not Found: /index.html 
+
+WARNING  2025-01-02 14:21:29,872  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  24592  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:30,015  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  20528  Not Found: /:undefined 
+
+WARNING  2025-01-02 14:21:30,060  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25216  Not Found: /login 
+
+WARNING  2025-01-02 14:21:30,255  D:\ProformaInvoice\Backend\venv\lib\site-packages\django\utils\log.py  log  224  25156  Not Found: /:undefined 
+
+WARNING  2025-01-21 11:37:59,659  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  10420  Not Found: /favicon.ico 
+
+WARNING  2025-01-21 11:37:59,685  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  16736  Not Found: /favicon.ico 
+
+WARNING  2025-01-21 12:12:55,616  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  22484  Not Found: /favicon.ico 
+
+WARNING  2025-01-21 12:15:33,531  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9844  Not Found: /media/signature/464-4165/PurushothamNaik_Prdopd4.jpg 
+
+WARNING  2025-01-21 12:15:38,629  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9844  Not Found: /media/signature/464R0293/RAJESH_SUBRAMANIAN_464R0293_DdVKzDL.JPG 
+
+WARNING  2025-01-21 12:15:42,332  D:\NewLogistic\Backend\venv\lib\site-packages\django\utils\log.py  log  224  9844  Not Found: /media/signature/Prdopd4/PurushothamNaik_Prdopd4.jpg 
+

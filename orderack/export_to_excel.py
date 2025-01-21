@@ -40,7 +40,8 @@ def dataListToExcel(data):
         df.loc[index, "CUSTOMER NAME"] = value['customerName']
         df.loc[index, "SO NO/FAK"] = value['docNo']
         df.loc[index, "PO NO"] = value['poNo']  # Adding PO No
-        df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date()  # Corrected date format
+        # df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date() if value['poDate'] is not None else df.loc[index, "PO Date"] = None
+        df.loc[index, "PO Date"] = datetime.strptime(value['poDate'], '%Y-%m-%d').date() if value['poDate'] is not None else None
         df.loc[index, "PI NO"] = value['pi_no']
         df.loc[index, "PI DATE"] = datetime.strptime(value['submitDate'], '%d-%m-%Y').date()
         df.loc[index, "PI DATE"] = df.loc[index, "PI DATE"].strftime("%d/%m/%Y")

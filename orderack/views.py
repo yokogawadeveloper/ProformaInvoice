@@ -3066,7 +3066,6 @@ class orderAckViewSet(viewsets.ModelViewSet):
     serializer_class = orderAckSerializer
 
     def get_queryset(self):
-        ##        query_set = self.queryset.exclude(DeleteFlag=True).order_by('OrderAckId')
         query_set = self.queryset
         return query_set
 
